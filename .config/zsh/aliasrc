@@ -5,7 +5,8 @@ alias vi=vim
 alias ls="ls -al --color=auto"
 
 # k8s
-alias k=kubectl
+alias k=kubectl --context $KUBE_CTX
+alias kubectl=kubectl --context $KUBE_CTX
 
 # terraform
 alias tf=terraform
