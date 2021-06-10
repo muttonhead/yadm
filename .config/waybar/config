@@ -1,17 +1,19 @@
 {
     "layer": "bottom", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 20, // Waybar height (to be removed for auto height)
+    "height": 25, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "custom/waybar-mpris"],
     "modules-center": ["sway/window"],
     "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "clock", "tray"],
     // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "format": "{name}: {icon}",
+    "sway/workspaces": {
+    	"disable-scroll": false,
+	"enable-bar-scroll": true,
+	"disable-scroll-wraparound": true,
+        //"all-outputs": true,
+	// "format": "{name}: {icon}",
     //     "format-icons": {
     //         "1": "",
     //         "2": "",
@@ -21,8 +23,8 @@
     //         "urgent": "",
     //         "focused": "",
     //         "default": ""
-    //     }
-    // },
+        //}
+    },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },

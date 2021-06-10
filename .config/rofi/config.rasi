@@ -1,0 +1,6 @@
+configuration {
+  modi: "drun,ssh,combi";
+  combi-modi: "drun,ssh";
+  font: "Source Code Pro 10";
+  theme: "gruvbox-dark";
+}
