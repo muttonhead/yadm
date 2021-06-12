@@ -1,5 +1,12 @@
 # Path to your oh-my-zsh installation.
-ZSH=/usr/share/oh-my-zsh/
+case "$OSTYPE" in
+  darwin*)
+    ZSH=~/.oh-my-zsh/
+  ;;
+  linux*)
+    ZSH=/usr/share/oh-my-zsh/
+  ;;
+esac
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -45,6 +52,13 @@ DISABLE_AUTO_UPDATE="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# brew path for macos
+case "$OSTYPE" in
+  darwin*)
+    export PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+  ;;
+esac
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -76,9 +90,13 @@ if [ -f ~/config/zsh/bashenv ]; then
 fi
 
 # Set dircolors
-if [ -f ~/.config/zsh/dircolors.ansi-dark ]; then
-	eval `dircolors ~/.config/zsh/dircolors.ansi-dark`
-fi
+case "$OSTYPE" in
+  linux*)
+    if [ -f ~/.config/zsh/dircolors.ansi-dark ]; then
+      eval `dircolors ~/.config/zsh/dircolors.ansi-dark`
+    fi
+  ;;
+esac
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -151,13 +169,6 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 eval "$(direnv hook zsh)"
 # end direnv
 
-# begin nvm
-[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
-source /usr/share/nvm/nvm.sh
-source /usr/share/nvm/bash_completion
-source /usr/share/nvm/install-nvm-exec
-# end nvm
-
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
@@ -171,6 +182,23 @@ eval "$(starship init zsh)"
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
+# begin nvm
+case "$OSTYPE" in
+  darwin*)
+    export PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+    [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+  ;;
+  linux*)
+    [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
+    source /usr/share/nvm/nvm.sh
+    source /usr/share/nvm/bash_completion
+    source /usr/share/nvm/install-nvm-exec
+  ;;
+esac
+# end nvm
 
 # place this after nvm initialization!
 autoload -U add-zsh-hook
