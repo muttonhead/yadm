@@ -4,9 +4,12 @@ alias vi=vim
 # Colorized outputs
 alias ls="ls -al --color=auto"
 
+# aws
+alias aws=$(dirname $(nvm which current)/aws)
+
 # k8s
-alias k=kubectl --context $KUBE_CTX
-alias kubectl=kubectl --context $KUBE_CTX
+alias k=kubectl --context $KUBE_CTX --config $KUBECONFIG
+alias kubectl=kubectl --context $KUBE_CTX --config $KUBECONFIG
 
 # terraform
 alias tf=terraform

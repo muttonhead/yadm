@@ -11,7 +11,7 @@ set clipboard=unnamedplus
 call plug#begin('~/.vim/plugged')
 
 " code
-" CocInstall coc-json coc-tsserver coc-eslint coc-css coc-html coc-python coc-tslint coc-sh coc-sqlfluff coc-swagger coc-toml coc-yaml
+" CocInstall coc-json coc-tsserver coc-eslint coc-css coc-html coc-python coc-tslint coc-sh coc-sqlfluff coc-swagger coc-toml coc-yaml coc-pairs
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'airblade/vim-gitgutter'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
