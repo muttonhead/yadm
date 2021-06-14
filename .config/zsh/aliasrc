@@ -1,8 +1,9 @@
-# Default to vim
-alias vi=vim
+# Default to neovim
+alias vi=nvim
+alias vim=nvim
 
 # Colorized outputs
-alias ls="ls -al --color=auto"
+alias ls="ls -al -G"
 
 # aws
 alias aws=$(dirname $(nvm which current)/aws)
