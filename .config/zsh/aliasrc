@@ -6,11 +6,12 @@ alias vim=nvim
 alias ls="ls -al -G"
 
 # aws
-alias aws=$(dirname $(nvm which current)/aws)
+#
+alias aws="$(dirname $(nvm which current))/aws"
 
 # k8s
-alias k=kubectl --context $KUBE_CTX --config $KUBECONFIG
-alias kubectl=kubectl --context $KUBE_CTX --config $KUBECONFIG
+alias k=$(/sbin/kubectl --context $KUBE_CTX --kubeconfig $KUBECONFIG)
+alias kubectl=$/sbin/kubectl --context $KUBE_CTX --kubeconfig $KUBECONFIG)
 
 # terraform
 alias tf=terraform

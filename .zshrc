@@ -107,7 +107,7 @@ esac
 # else
 #   export EDITOR='mvim'
 # fi
-export EDITOR='neovim'
+export EDITOR='nvim'
 export PAGER='less'
 
 # Compilation flags

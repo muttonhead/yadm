@@ -17,7 +17,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
 " navigation
-Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -25,8 +25,7 @@ Plug 'nvim-telescope/telescope.nvim'
 
 " visual
 Plug 'morhetz/gruvbox'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'hoob3rt/lualine.nvim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'nathanaelkane/vim-indent-guides'
 
@@ -41,7 +40,16 @@ syntax enable
 set background=dark
 colorscheme gruvbox
 set termguicolors
-let g:airline_theme='base16_gruvbox_dark_hard'
+
+
+"""""""""""""
+" lualine
+"""""""""""""
+lua <<EOF
+require'lualine'.setup {
+  options = {theme = 'gruvbox'}
+}
+EOF
 
 """""""""""""
 " nvim-tree
