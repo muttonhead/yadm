@@ -5,13 +5,13 @@ shell:
 
 font:
   normal:
-    family: Source Code Pro
+    family: SauceCodePro Nerd Font Mono
     style: Regular
   bold:
-    family: Source Code Pro
+    family: SauceCodePro Nerd Font Mono
     style: Bold
   italic:
-    family: Source Code Pro
+    family: SauceCodePro Nerd Font Mono
     style: Italic
   size: 10
 
