@@ -6,7 +6,6 @@ alias vim=nvim
 alias ls="ls -al -G"
 
 # aws
-#
 alias aws="$(dirname $(nvm which current))/aws"
 
 # k8s
@@ -14,6 +13,8 @@ alias k=kubectl
 
 # terraform
 alias tf=terraform
+alias tg="$(dirname $(nvm which current))/terragrunt"
+alias terragrunt="$(dirname $(nvm which current))/terragrunt"
 
 # git
 alias g=git

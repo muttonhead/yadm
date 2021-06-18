@@ -220,3 +220,14 @@ load-nvmrc
 if [ -f ~/.config/zsh/aliasrc ]; then
 	source ~/.config/zsh/aliasrc
 fi
+
+# fzf
+if [ -f /usr/share/fzf/key-bindings.zsh ]; then
+	source /usr/share/fzf/key-bindings.zsh
+	source /usr/share/fzf/completion.zsh
+fi
+
+# k3d
+if [ -f ~/.config/zsh/k3d_completion ]; then
+  source ~/.config/zsh/k3d_completion
+fi
