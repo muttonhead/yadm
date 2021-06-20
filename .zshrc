@@ -226,6 +226,10 @@ if [ -f /usr/share/fzf/key-bindings.zsh ]; then
 	source /usr/share/fzf/key-bindings.zsh
 	source /usr/share/fzf/completion.zsh
 fi
+if [ -f /opt/homebrew/opt/fzf/shell/key-bindings.zsh ]; then
+	source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
+	source /opt/homebrew/opt/fzf/shell/completion.zsh
+fi
 
 # k3d
 if [ -f ~/.config/zsh/k3d_completion ]; then
