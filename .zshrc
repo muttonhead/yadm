@@ -235,3 +235,9 @@ fi
 if [ -f ~/.config/zsh/k3d_completion ]; then
   source ~/.config/zsh/k3d_completion
 fi
+
+# ruby gems
+if [ -d ~/.local/share/gem/ruby/3.0.0/bin ]; then
+  export PATH=$PATH:~/.local/share/gem/ruby/3.0.0/bin
+fi
+
