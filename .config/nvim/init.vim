@@ -30,6 +30,9 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ryanoasis/vim-devicons'
 
+" misc
+Plug 'nikvdp/neomux'
+
 call plug#end()
 filetype plugin indent on
 
@@ -48,7 +51,7 @@ set termguicolors
 """""""""""""
 lua <<EOF
 require'lualine'.setup {
-  options = {theme = 'gruvbox'}
+  options = {theme = 'gruvbox'},
 }
 EOF
 
@@ -229,3 +232,7 @@ EOF
 " indent-guides
 """""""""""""
 let g:indent_guides_enable_on_vim_startup = 1
+
+"""""""""""""
+" neomux
+"""""""""""""
