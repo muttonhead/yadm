@@ -11,10 +11,11 @@ set clipboard=unnamedplus
 call plug#begin('~/.vim/plugged')
 
 " code
-" CocInstall coc-json coc-tsserver coc-eslint coc-css coc-html coc-python coc-tslint coc-sh coc-sqlfluff coc-swagger coc-toml coc-yaml coc-pairs
+" CocInstall coc-json coc-tsserver coc-eslint coc-css coc-html coc-python coc-tslint coc-sh coc-sqlfluff coc-swagger coc-toml coc-yaml
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'airblade/vim-gitgutter'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'hashivim/vim-terraform'
 
 " navigation
 Plug 'kyazdani42/nvim-web-devicons'
@@ -113,7 +114,6 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   highlight = {
     enable = true,              -- false will disable the whole extension
-    disable = { "c", "rust" },  -- list of language that will be disabled
   },
 }
 EOF
@@ -122,10 +122,6 @@ lua <<EOF
 require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
-    custom_captures = {
-      -- Highlight the @foo.bar capture group with the "Identifier" highlight group.
-      ["foo.bar"] = "Identifier",
-    },
   },
 }
 EOF
