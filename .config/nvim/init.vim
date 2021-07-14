@@ -33,6 +33,7 @@ Plug 'ryanoasis/vim-devicons'
 
 " misc
 Plug 'nikvdp/neomux'
+Plug 'vhyrro/neorg'
 
 call plug#end()
 filetype plugin indent on
@@ -232,3 +233,23 @@ let g:indent_guides_enable_on_vim_startup = 1
 """""""""""""
 " neomux
 """""""""""""
+
+
+"""""""""""""
+" neoorg
+"""""""""""""
+lua<<EOF
+require('neorg').setup{
+    load = {
+        ["core.defaults"] = {}, -- Load all the default modules
+        ["core.norg.concealer"] = {}, -- Allows for use of icons
+        ["core.norg.dirman"] = { -- Manage your directories with Neorg
+            config = {
+                workspaces = {
+                    my_workspace = "~/neorg"
+                }
+            }
+        }
+    },
+}
+EOF

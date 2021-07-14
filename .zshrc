@@ -241,3 +241,5 @@ if [ -d ~/.local/share/gem/ruby/3.0.0/bin ]; then
   export PATH=$PATH:~/.local/share/gem/ruby/3.0.0/bin
 fi
 
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/packer packer
