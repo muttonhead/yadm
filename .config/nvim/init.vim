@@ -3,7 +3,7 @@ let &t_ut=''
 set nocompatible
 filetype off
 set noswapfile
-" set clipboard=unnamedplus
+set clipboard=unnamedplus
 
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'

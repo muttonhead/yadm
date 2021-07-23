@@ -29,6 +29,7 @@
 	rbc = rebase --continue
 	rba = rebase --abort
   po = push origin HEAD
+  root = !pwd
 
 [includeIf "gitdir:~/work/neverfailcc/"]
 	path = ~/work/neverfailcc/.gitconfig
