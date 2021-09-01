@@ -16,5 +16,8 @@ alias tf=terraform
 alias tg="$(dirname $(nvm which current))/terragrunt"
 alias terragrunt="$(dirname $(nvm which current))/terragrunt"
 
+# packer
+alias packer="$(dirname $(nvm which current))/packer"
+
 # git
 alias g=git

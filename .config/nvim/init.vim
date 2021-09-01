@@ -267,22 +267,28 @@ require('toggleterm').setup{
 EOF
 
 """""""""""""
-" neoorg
+" neorg
 """""""""""""
 lua<<EOF
 require('neorg').setup{
-    load = {
-        ["core.defaults"] = {}, -- Load all the default modules
-        ["core.norg.concealer"] = {}, -- Allows for use of icons
-        ["core.norg.dirman"] = { -- Manage your directories with Neorg
-            config = {
-                workspaces = {
-                    my_workspace = "~/neorg"
-                }
-            }
-        }
+  load = {
+    ["core.defaults"] = {}, -- Load all the default modules
+    ["core.keybinds"] = {
+      config = {
+        default_keybinds = true,
+      }
     },
+    ["core.norg.concealer"] = {}, -- Allows for use of icons
+    ["core.norg.dirman"] = { -- Manage your directories with Neorg
+      config = {
+        workspaces = {
+          ds_workspace = "~/work/devsupply/notes",
+          nf_workspace = "~/work/neverfailcc/notes",
+        },
+        autodetect = true,
+        autochdir = true,
+      }
+    }
+  },
 }
 EOF
-
-
