@@ -16,6 +16,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'airblade/vim-gitgutter'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'hashivim/vim-terraform'
+Plug 'windwp/nvim-autopairs'
 
 " navigation
 Plug 'kyazdani42/nvim-web-devicons'
@@ -51,15 +52,46 @@ set termguicolors
 """""""""""""
 " lualine
 """""""""""""
+function! StatusDiagnostic() abort
+  let info = get(b:, 'coc_diagnostic_info', {})
+  if empty(info) | return '' | endif
+  let msgs = []
+  if get(info, 'error', 0)
+    call add(msgs, 'E' . info['error'])
+  endif
+  if get(info, 'warning', 0)
+    call add(msgs, 'W' . info['warning'])
+  endif
+  return join(msgs, ' ') . ' ' . get(g:, 'coc_status', '')
+endfunction
 lua <<EOF
 require'lualine'.setup {
   options = {theme = 'gruvbox'},
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch'},
+    lualine_c = {'filename'},
+    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
 }
 EOF
 
 """""""""""""
 " nvim-tree
 """""""""""""
+lua <<EOF
+require'nvim-tree'.setup {}
+EOF
 nnoremap <C-n> :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
 nnoremap <leader>n :NvimTreeFindFile<CR>
@@ -291,4 +323,11 @@ require('neorg').setup{
     }
   },
 }
+EOF
+
+"""""""""""""
+" autopairs
+"""""""""""""
+lua<<EOF
+require('nvim-autopairs').setup{}
 EOF
