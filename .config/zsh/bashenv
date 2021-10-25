@@ -5,3 +5,5 @@ export EDITOR=vim
 export PAGER=less
 
 export PATH=~/.npm-global/bin:$PATH
+
+export ARCHPREFERENCE=arm64
