@@ -9,12 +9,13 @@
       ],
       "initializationOptions": {},
       "settings": {}
-    },
-    "yaml": {
-      "format": {
-        "enable": true,
-        "singleQuote": true
-      }
     }
+  },
+  "yaml.format.enable": true,
+  "yaml.format.singleQuote": true,
+  "[yaml]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.quickSuggestions": true
   }
 }
