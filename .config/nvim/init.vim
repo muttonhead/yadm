@@ -35,6 +35,7 @@ Plug 'ryanoasis/vim-devicons'
 " misc
 Plug 'akinsho/nvim-toggleterm.lua'
 Plug 'vhyrro/neorg'
+Plug 'AckslD/nvim-neoclip.lua'
 
 call plug#end()
 filetype plugin indent on
@@ -90,12 +91,18 @@ EOF
 " nvim-tree
 """""""""""""
 lua <<EOF
-require'nvim-tree'.setup {}
+require'nvim-tree'.setup {
+  view = {
+    width = 40
+  },
+  filters = {
+    dotfiles = false
+  }
+} 
 EOF
 nnoremap <C-n> :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
 nnoremap <leader>n :NvimTreeFindFile<CR>
-let g:nvim_tree_hide_dotfiles = 0
 
 """""""""""""
 " navigate buffers
@@ -236,6 +243,7 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>fc <cmd>Telescope neoclip<cr>
 
 lua<<EOF
 local actions = require('telescope.actions')
@@ -330,4 +338,12 @@ EOF
 """""""""""""
 lua<<EOF
 require('nvim-autopairs').setup{}
+EOF
+
+"""""""""""""
+" neoclip
+"""""""""""""
+lua<<EOF
+require('neoclip').setup({
+})
 EOF
