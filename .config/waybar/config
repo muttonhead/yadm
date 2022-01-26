@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "custom/waybar-mpris"],
     "modules-center": ["sway/window"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "clock", "tray"],
+    "modules-right": ["idle_inhibitor", "custom/github", "pulseaudio", "network", "cpu", "memory", "temperature", "clock", "tray"],
     // Modules configuration
     "sway/workspaces": {
     	"disable-scroll": false,
@@ -148,5 +148,11 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "custom/github": {
+      "format": "📦 {}",
+      "interval": 30,
+      "on-click": "xdg-open https://github.com/notifications?query=reason%3Aparticipating",
+      "exec": "~/.config/waybar/github-status.sh",
     },
 }

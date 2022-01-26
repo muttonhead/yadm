@@ -34,7 +34,6 @@ Plug 'ryanoasis/vim-devicons'
 
 " misc
 Plug 'akinsho/nvim-toggleterm.lua'
-Plug 'vhyrro/neorg'
 Plug 'AckslD/nvim-neoclip.lua'
 
 call plug#end()
@@ -97,6 +96,9 @@ require'nvim-tree'.setup {
   },
   filters = {
     dotfiles = false
+  },
+  git = {
+    ignore = false
   }
 } 
 EOF
@@ -155,19 +157,6 @@ require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,              -- false will disable the whole extension
   },
-}
-EOF
-
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-  },
-}
-EOF
-
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
   incremental_selection = {
     enable = true,
     keymaps = {
@@ -177,14 +166,9 @@ require'nvim-treesitter.configs'.setup {
       node_decremental = "grm",
     },
   },
-}
-EOF
-
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
   indent = {
     enable = true
-  }
+  },
 }
 EOF
 
@@ -303,33 +287,6 @@ require('toggleterm').setup{
       background = "Normal",
     }
   }
-}
-EOF
-
-"""""""""""""
-" neorg
-"""""""""""""
-lua<<EOF
-require('neorg').setup{
-  load = {
-    ["core.defaults"] = {}, -- Load all the default modules
-    ["core.keybinds"] = {
-      config = {
-        default_keybinds = true,
-      }
-    },
-    ["core.norg.concealer"] = {}, -- Allows for use of icons
-    ["core.norg.dirman"] = { -- Manage your directories with Neorg
-      config = {
-        workspaces = {
-          ds_workspace = "~/work/devsupply/notes",
-          nf_workspace = "~/work/neverfailcc/notes",
-        },
-        autodetect = true,
-        autochdir = true,
-      }
-    }
-  },
 }
 EOF
 
