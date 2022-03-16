@@ -227,3 +227,7 @@ exec wl-paste -t text --watch clipman store
 
 # swayshot
 bindsym --no-warn Print exec swayshot region
+bindsym --no-warn Pause exec swayshot region
+
+# mako
+exec mako

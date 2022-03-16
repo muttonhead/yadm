@@ -243,3 +243,6 @@ fi
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/packer packer
+
+# krew
+export PATH="${PATH}:${HOME}/.krew/bin"

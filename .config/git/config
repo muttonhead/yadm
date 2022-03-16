@@ -1,6 +1,6 @@
 [user]
 	name = Corey Brothers
-	email = corey.brothers@gmail.com
+	email = cbrothers@devsupply.com
 [core]
 	editor = vim
 	whitespace = cr-at-eol
@@ -31,8 +31,5 @@
   po = push origin HEAD
   root = !pwd
 
-[includeIf "gitdir:~/work/neverfailcc/"]
-	path = ~/work/neverfailcc/.gitconfig
-
-[includeIf "gitdir:~/work/devsupply/"]
-	path = ~/work/devsupply/.gitconfig
+[includeIf "gitdir:~/work"]
+	path = ~/work/.gitconfig

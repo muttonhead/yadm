@@ -17,6 +17,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'hashivim/vim-terraform'
 Plug 'windwp/nvim-autopairs'
+Plug 'stephpy/vim-yaml'
 
 " navigation
 Plug 'kyazdani42/nvim-web-devicons'
@@ -167,7 +168,8 @@ require'nvim-treesitter.configs'.setup {
     },
   },
   indent = {
-    enable = true
+    enable = true,
+    disable = { 'yaml', 'yml' },
   },
 }
 EOF
