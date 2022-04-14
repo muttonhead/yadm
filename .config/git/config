@@ -30,6 +30,8 @@
 	rba = rebase --abort
   po = push origin HEAD
   root = !pwd
+[diff]
+  external = difft
 
 [includeIf "gitdir:~/work"]
 	path = ~/work/.gitconfig
