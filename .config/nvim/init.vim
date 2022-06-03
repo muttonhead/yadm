@@ -20,6 +20,7 @@ Plug 'windwp/nvim-autopairs'
 Plug 'stephpy/vim-yaml'
 
 " navigation
+Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-lua/popup.nvim'
@@ -31,7 +32,6 @@ Plug 'morhetz/gruvbox'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'ryanoasis/vim-devicons'
 
 " misc
 Plug 'akinsho/nvim-toggleterm.lua'
@@ -154,7 +154,7 @@ au FileType * setlocal comments-=:// comments+=f://
 " set foldexpr=nvim_treesitter#foldexpr()
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   highlight = {
     enable = true,              -- false will disable the whole extension
   },
@@ -264,7 +264,7 @@ set hidden
 lua<<EOF
 require('toggleterm').setup{
   -- size can be a number or function which is passed the current terminal
-  size = 20,
+  size = 80,
   open_mapping = [[<c-\>]],
   hide_numbers = true, -- hide the number column in toggleterm buffers
   shade_filetypes = {},
@@ -273,7 +273,7 @@ require('toggleterm').setup{
   start_in_insert = true,
   insert_mappings = true, -- whether or not the open mapping applies in insert mode
   persist_size = true,
-  direction = 'float',
+  direction = 'vertical',
   close_on_exit = true, -- close the terminal window when the process exits
   shell = vim.o.shell, -- change the default shell
   -- This field is only relevant if direction is set to 'float'

@@ -246,3 +246,15 @@ complete -o nospace -C /usr/bin/packer packer
 
 # krew
 export PATH="${PATH}:${HOME}/.krew/bin"
+ 
+# podman
+if command -v podman &> /dev/null
+then
+  alias docker=podman
+fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+

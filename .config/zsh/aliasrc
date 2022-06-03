@@ -6,18 +6,25 @@ alias vim=nvim
 alias ls="ls -al -G"
 
 # aws
-alias aws="$(dirname $(nvm which current))/aws"
+# alias aws="$(dirname $(nvm which current))/aws"
 
 # k8s
 alias k=kubectl
 
 # terraform
 alias tf=terraform
-alias tg="$(dirname $(nvm which current))/terragrunt"
-alias terragrunt="$(dirname $(nvm which current))/terragrunt"
+# alias tg="$(dirname $(nvm which current))/terragrunt"
+# alias terragrunt="$(dirname $(nvm which current))/terragrunt"
 
 # packer
-alias packer="$(dirname $(nvm which current))/packer"
+# alias packer="$(dirname $(nvm which current))/packer"
 
 # git
 alias g=git
+
+# python
+case "$OSTYPE" in
+  darwin*)
+    alias python=/opt/homebrew/bin/python3
+  ;;
+esac
