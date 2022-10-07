@@ -1,6 +1,6 @@
 [user]
-	name = Corey Brothers
-	email = cbrothers@devsupply.com
+	name = Corey
+	email = 1957486+muttonhead@users.noreply.github.com
 [core]
 	editor = vim
 	whitespace = cr-at-eol
@@ -35,3 +35,8 @@
 
 [includeIf "gitdir:~/work"]
 	path = ~/work/.gitconfig
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

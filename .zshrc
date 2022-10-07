@@ -77,6 +77,7 @@ plugins=( \
 	archlinux \
 	systemd \
   vi-mode \
+  git-machete \
 )
 
 # User configuration
@@ -242,19 +243,20 @@ if [ -d ~/.local/share/gem/ruby/3.0.0/bin ]; then
 fi
 
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/bin/packer packer
+complete -o nospace -C $(which packer) packer
 
 # krew
 export PATH="${PATH}:${HOME}/.krew/bin"
  
-# podman
-if command -v podman &> /dev/null
-then
-  alias docker=podman
-fi
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+
+# bun completions
+[ -s "/Users/coreybrothers/.bun/_bun" ] && source "/Users/coreybrothers/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
