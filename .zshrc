@@ -269,3 +269,8 @@ export PATH="$PNPM_HOME:$PATH"
 #lvim
 export PATH=$PATH:/Users/coreybrothers/.local/bin
 # lvim end
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/coreybrothers/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+source /Users/coreybrothers/.docker/init-zsh.sh || true # Added by Docker Desktop

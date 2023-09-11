@@ -31,7 +31,7 @@
   po = push origin HEAD
   root = !pwd
 [diff]
-  external = difft
+	external = difft
 
 [includeIf "gitdir:~/work"]
 	path = ~/work/.gitconfig
@@ -40,3 +40,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[url "https://oauth2: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@github.com"]
+	insteadOf = https://github.com

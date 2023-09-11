@@ -1,6 +1,7 @@
 # Default to neovim
 alias vi=nvim
 alias vim=nvim
+# alias nvim=lvim
 
 # Colorized outputs
 alias ls="ls -al -G"
@@ -10,6 +11,7 @@ alias ls="ls -al -G"
 
 # k8s
 alias k=kubectl
+alias bastion="kubectl exec --stdin --tty -n mini-bastion $(kubectl get pods -n mini-bastion | cut -c1-29 | grep mini) -- /bin/sh"
 
 # terraform
 alias tf=terraform
