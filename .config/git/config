@@ -40,5 +40,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[url "https://oauth2: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@github.com"]
+[url "https://oauth2:${GITHUB_TOKEN}@github.com"]
 	insteadOf = https://github.com
