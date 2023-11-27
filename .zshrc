@@ -274,3 +274,6 @@ export PATH=$PATH:/Users/coreybrothers/.local/bin
 export PATH="/Users/coreybrothers/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 source /Users/coreybrothers/.docker/init-zsh.sh || true # Added by Docker Desktop
+
+export PATH="/opt/homebrew/opt/ruby@2.7/bin:$PATH"
+export PATH="$PATH:/opt/homebrew/lib/ruby/gems/2.7.0/bin/"
