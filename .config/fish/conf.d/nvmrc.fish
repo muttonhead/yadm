@@ -1,29 +1,28 @@
-function set_nvm --on-event fish_prompt
-    # if the current directory hasn't changed, do nothing
-    string match -q $PWD $PREV_PWD; and return 1
+set --query nvm_mirror || set --global nvm_mirror https://nodejs.org/dist
+set --query XDG_DATA_HOME || set --local XDG_DATA_HOME ~/.local/share
+set --global nvm_data $XDG_DATA_HOME/nvm
 
-    # if the current directory is within the previous one where we found an nvmrc
-    # and there is no subsequent .nvmrc here, do nothing, we are in the same repo
-    string match -eq $PREV_PWD $PWD; and not test -e '.nvmrc'; and return 1
+function _nvm_install --on-event nvm_install
+    test ! -d $nvm_data && command mkdir -p $nvm_data
+    echo "Downloading the Node distribution index..." 2>/dev/null
+    _nvm_index_update
+end
 
-    # if we clear those checks, keep track of where we are
-    set -g PREV_PWD $PWD
+function _nvm_update --on-event nvm_update
+    set --query --universal nvm_data && set --erase --universal nvm_data
+    set --query --universal nvm_mirror && set --erase --universal nvm_mirror
+    set --query nvm_mirror || set --global nvm_mirror https://nodejs.org/dist
+end
 
-    if test -e '.nvmrc'
+function _nvm_uninstall --on-event nvm_uninstall
+    command rm -rf $nvm_data
 
-        # if we find .nvmrc, run nvm use
-        nvm use
+    set --query nvm_current_version && _nvm_version_deactivate $nvm_current_version
 
-        # and remember that we used that node
-        set NVM_DIRTY true
+    set --names | string replace --filter --regex -- "^nvm" "set --erase nvm" | source
+    functions --erase (functions --all | string match --entire --regex -- "^_nvm_")
+end
 
-    else if not string match $NVM_DIRTY true
-
-        # if we have set nvm and have stepped out of that repo
-        # go back to default node, if not already on it
-        not string match -eq (nvm current) (nvm alias default); and nvm use default
-
-        # and clear the flag
-        set NVM_DIRTY
-    end
+if status is-interactive && set --query nvm_default_version && ! set --query nvm_current_version
+    nvm use --silent $nvm_default_version
 end
