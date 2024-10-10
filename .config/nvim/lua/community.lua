@@ -8,7 +8,6 @@ return {
   { import = "astrocommunity.colorscheme.nightfox-nvim" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.pack.angular" },
-  { import = "astrocommunity.pack.ansible" },
   { import = "astrocommunity.pack.astro" },
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.docker" },
