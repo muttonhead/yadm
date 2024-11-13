@@ -1,0 +1,12 @@
+k9s:
+  cluster: arn:aws-us-gov:eks:us-gov-west-1:920769949801:cluster/sti-staging-new
+  namespace:
+    active: default
+    lockFavorites: false
+    favorites:
+    - default
+  view:
+    active: po
+  featureGates:
+    nodeShell: false
+  portForwardAddress: localhost
