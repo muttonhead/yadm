@@ -31,4 +31,10 @@ if test -d ~/.local/bin
 end
 
 # zoxide
-zoxide init fish | source
+zoxide init fish --cmd cd | source
+
+# kubectl krew
+set -q KREW_ROOT; and set -gx PATH $PATH $KREW_ROOT/.krew/bin; or set -gx PATH $PATH $HOME/.krew/bin
+
+# cmctl
+cmctl completion fish | source
