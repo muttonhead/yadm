@@ -38,3 +38,6 @@ set -q KREW_ROOT; and set -gx PATH $PATH $KREW_ROOT/.krew/bin; or set -gx PATH $
 
 # cmctl
 cmctl completion fish | source
+
+# java home
+. ~/.asdf/plugins/java/set-java-home.fish
