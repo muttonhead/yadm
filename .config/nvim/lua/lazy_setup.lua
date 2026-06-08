@@ -29,4 +29,8 @@ require("lazy").setup({
       },
     },
   },
+  -- rocks = {
+  --   enabled = true,
+  --   hererocks = true, -- Forces an isolated Lua 5.1 environment
+  -- },
 } --[[@as LazyConfig]])

@@ -41,3 +41,6 @@ cmctl completion fish | source
 
 # java home
 . ~/.asdf/plugins/java/set-java-home.fish
+
+# mise
+mise activate fish | source
