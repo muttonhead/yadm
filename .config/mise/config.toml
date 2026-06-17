@@ -1,0 +1,4 @@
+[tools]
+bun = "latest"
+terraform = "latest"
+terragrunt = "latest"
