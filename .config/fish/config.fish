@@ -37,7 +37,9 @@ zoxide init fish --cmd cd | source
 set -q KREW_ROOT; and set -gx PATH $PATH $KREW_ROOT/.krew/bin; or set -gx PATH $PATH $HOME/.krew/bin
 
 # cmctl
-cmctl completion fish | source
+if type -q cmctl
+  cmctl completion fish | source
+end
 
 # java home
 # . ~/.asdf/plugins/java/set-java-home.fish
