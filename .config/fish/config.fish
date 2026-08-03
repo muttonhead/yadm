@@ -7,13 +7,40 @@ end
 starship init fish | source
 eval (gdircolors -c ~/.config/zsh/dircolors.ansi-dark)
 
-# Created by `pipx` on 2024-05-22 20:23:23
-set PATH $PATH /home/corey/.local/bin
-set PATH $PATH /home/corey/.garden/bin
-  
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
+# ASDF configuration code
+# if test -z $ASDF_DATA_DIR
+#     set _asdf_shims "$HOME/.asdf/shims"
+# else
+#     set _asdf_shims "$ASDF_DATA_DIR/shims"
+# end
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/corey/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/corey/Downloads/google-cloud-sdk/path.fish.inc'; end
+# Do not use fish_add_path (added in Fish 3.2) because it
+# potentially changes the order of items in PATH
+# if not contains $_asdf_shims $PATH
+#     set -gx --prepend PATH $_asdf_shims
+# end
+# set --erase _asdf_shims
+
+# asdf
+# source /opt/homebrew/opt/asdf/libexec/asdf.fish
+# source ~/.asdf/plugins/golang/set-env.fish
+
+# local
+if test -d ~/.local/bin
+  fish_add_path -a ~/.local/bin
+end
+
+# zoxide
+zoxide init fish --cmd cd | source
+
+# kubectl krew
+set -q KREW_ROOT; and set -gx PATH $PATH $KREW_ROOT/.krew/bin; or set -gx PATH $PATH $HOME/.krew/bin
+
+# cmctl
+cmctl completion fish | source
+
+# java home
+# . ~/.asdf/plugins/java/set-java-home.fish
+
+# mise
+mise activate fish | source
