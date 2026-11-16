@@ -1,5 +1,7 @@
 [tools]
 bun = "latest"
+flux2 = "latest"
 go = "latest"
+helm = "latest"
 terraform = "latest"
 terragrunt = "latest"
